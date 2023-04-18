@@ -1,15 +1,14 @@
 ---
 title:
-- AI Playground
+- Reading 3A - Elements of Finite Model Theory
 author:
-- Ashwin Kumar K
+- Tyler Hanks, Richie Yeung
 theme:
 - Copenhagen
 date:
-- March 22, 2020
+- Apr 24, 2023
 
 ---
-
 
 
 # What's AI?
