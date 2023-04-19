@@ -100,10 +100,20 @@ The set of all properties expressible in existential second-order logic is preci
 
 # Chapter 2: Preliminaries
 
+::: {.block}
 ### Definition
 A vocabulary $\sigma$ is a collection of constant symbols $(
-c_1, \ldots$, relation, or predicate, symbols $(P_1, \ldots)$ and function
-symbols $(f_1, \ldots)$. Each relation and function symbol has an associated arity.
+c_1, \ldots)$, relation (or predicate), symbols $(P_1, \ldots)$ and function
+symbols $(f_1, \ldots)$.
+:::
+
+For example, in a graph:
+
+* The vertices $V$ are the constant symbols.
+* The edges $E$ are the relation symbols.
+* The colors $C$ are the function symbols.
+
+Each relation and function symbol has an associated arity.
 
 # Chapter 2: Preliminaries
 
