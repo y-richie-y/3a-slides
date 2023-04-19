@@ -10,65 +10,180 @@ date:
 
 ---
 
+# Chapter 1: Introduction
+* Finite model theory studies the expressive power of logics on finite models.
+    * Finite graphs
+    * Finite strings ...
+* Classical model theory, on the other hand, concentrates on infinite structures
+    * $\langle\mathbf{C}, +, \cdot\rangle$
+    * $\langle\mathbf{R}, +, \cdot, <\rangle$
+    * Infinite graphs ...
 
-# What's AI?
+# Chapter 1: Introduction
+Example 1: $NP$ vs $\exists SO$
 
-- Artificial Intelligence- The ability of machine to think and behave like humans.
-- How does the machine learn on its own? - That is called Machine Learning. ML is the study of computer algorithms that improve automatically with experience.
-- Just like humans learn with experience - Machines also learn with experience!
-- Examples of common AI? Alexa, Siri, Google Home, Self Driving Cars, Robots etc.
+<!-- Can't express reachability in FOL -->
 
-# What's out there?
+### Hamiltonian Cycle
+Given a graph $G = (V, E)$, is there a cycle that visits every vertex exactly once?
 
-![Verticles](img/Untitled.png)
+### 3 Colorability
+Given a graph $G = (V, E)$, can we color the vertices with three colors such that no two adjacent vertices have the same color?
 
+# Chapter 1: Introduction
+Example 1: $NP$ vs $\exists SO$
 
-# How do computers make decisions?
+::: {.block}
+### Hamiltonian Cycle
+Given a graph $G = (V, E)$, is there a cycle that visits every vertex exactly once?
+:::
 
-- Conditional statements are used to perform different actions based on different conditions.
-- In many programming languages, decisions (also called conditionals) take the form of an if-then construct. They start with a condition, which is then evaluated as either True or False.
-
-# How do computers make decisions?
-
-![Flow chart](img/Untitled 1.png){ width=250px }
-
-# Let's Build that
-
-​```jsx
-Bot.send("Are you going out to play?")
-async function respond(inputText){
-    if (inputText == "yes"){
-        Bot.send("Wear a hat");
-    }
-    else {
-        Bot.send("ok");
-    }
-
- }
-\```     <REMOVE THE \>
-
-What we learned. - Bot.send() method - if else statements.
-
-# Build a basic greetings bot
-
-![Flow chart](img/Untitled 2.png)
+$$
+\exists L \exists S\left(\begin{array}{l}
+\text { linear order }(L) \\
+\wedge S \text { is the successor relation of } L \\
+\wedge \forall x \exists y(L(x, y) \vee L(y, x)) \\
+\wedge \forall x \forall y(S(x, y) \rightarrow E(x, y))
+\end{array}\right)
+$$
 
 
+$L$ and $S$ are binary relations.
 
-# Benefits of AI Playground
+# Chapter 1: Introduction
+Example 1: $NP$ vs $\exists SO$
 
-- Streamlines a lot of back end operations, so that the you can just learn what AI is — and can get immediate results!
-- User friendly!
-- Designed to suit students needs.
-- Students can see and publish new projects and thus learn from each other.
+::: {.block}
+### 3 Colorability
+Given a graph $G = (V, E)$, can we color the vertices with three colors such that no two adjacent vertices have the same color?
+:::
 
-## How does learning AI help?
+$$
+\exists A \exists B \exists C\left(\begin{array}{c}
+\forall x\left[\begin{array}{c}
+(A(x) \wedge \neg B(x) \wedge \neg C(x)) \\
+\vee(\neg A(x) \wedge B(x) \wedge \neg C(x)) \\
+\vee(\neg A(x) \wedge \neg B(x) \wedge C(x))
+\end{array}\right] \\
+\wedge \\
+\forall x, y E(x, y) \rightarrow \neg\left[\begin{array}{c}
+(A(x) \wedge A(y)) \\
+\vee(B(x) \wedge B(y)) \\
+\vee(C(x) \wedge C(y))
+\end{array}\right]
+\end{array}\right)
+$$
 
-- Logical reasoning and Sequencing 
-- Critical thinking
-- Problem solving
-- Mental Mathematics
-    - The above skills are implicit skills that students learn along with AI. And this helps them in academics, life, etc.
+$A$, $B$, and $C$ are predicates.
+
+
+# Chapter 1: Introduction
+Example 2: Formal Language Theory
+
+### Theorem
+First Order Logic (FOL) is not expressive enough to express regular languages. (E.g. $(aa)^*$)
+
+# Chapter 1: Introduction
+
+### Fagin's Theorem
+The set of all properties expressible in existential second-order logic is precisely the complexity class $NP$. That is, $NP = \exists SO$.
+<!-- oldest theorem in descriptive complexity -->
+
+# Chapter 1: Introduction
+* What is Finite Model Theory
+* Example 1: $NP = \exists SO$
+    * Graph example 1: Reachability
+    * Graph example 2: Hamiltonian Cycle
+    * Graph example 3: 3 Colorability
+* Example 2: Formal Language Theory
+    * Example 4: Regular Languages are not $FO$ expressible
+
+# Chapter 2: Preliminaries
+
+### Definition
+A vocabulary $\sigma$ is a collection of constant symbols $(
+c_1, \ldots$, relation, or predicate, symbols $(P_1, \ldots)$ and function
+symbols $(f_1, \ldots)$. Each relation and function symbol has an associated arity.
+
+# Chapter 2: Preliminaries
+
+### Definition
+A $\sigma$-structure $\mathfrak{U}$
+
+$$\mathfrak{U} = \langle A, \{ c^\mathfrak{U}_i \}, \{ P^\mathfrak{U}_i \}, \{ f^\mathfrak{U}_i \} \rangle$$
+
+consists of a universe $A$ together with an interpretation of
+
+* each constant symbol $c_i$ from $\sigma$ as an element $c^\mathfrak{U}_i \in A$
+* each $k$-ary relation symbol $P_i$ from $\sigma$ as a $k$-ary relation on $A$; that is, a set $P^\mathfrak{U}_i \subseteq A^k$
+* each $k$-ary function symbol $f_i$ from $\sigma$ as a function $f^\mathfrak{U}_i : A^k \rightarrow A$.
+
+
+
+# Chapter 2: Preliminaries
+* A theory $T$ is a set of sentences $\{ \Phi_i \}_i$.
+* A $\sigma$-structure $\mathcal{U}$ is a model of a theory $T$ iff for every sentence $\Phi$ of $T$, the structure A is a model of $\Phi$.
+* A theory $T$ is called consistent if it has a model.
+
+
+# Chapter 2: Preliminaries
+
+### Compactness Theorem
+A theory $T$ is consistent if and only if every finite subset of $T$ is consistent.
+
+### Löwenheim-Skolem Theorem
+If $T$ has an infinite model, then it has a countable model.
+
+# Chapter 1 (Revisited): Introduction
+Example 1: $NP$ vs $\exists SO$
+
+1. 3 Colorability: Given a graph $G = (V, E)$, can we color the vertices with three colors such that no two adjacent vertices have the same color?
+
+Logic formula:
+$$
+\exists A \exists B \exists C\left(\begin{array}{c}
+\forall x\left[\begin{array}{c}
+(A(x) \wedge \neg B(x) \wedge \neg C(x)) \\
+\vee(\neg A(x) \wedge B(x) \wedge \neg C(x)) \\
+\vee(\neg A(x) \wedge \neg B(x) \wedge C(x))
+\end{array}\right] \\
+\wedge \\
+\forall x, y E(x, y) \rightarrow \neg\left[\begin{array}{c}
+(A(x) \wedge A(y)) \\
+\vee(B(x) \wedge B(y)) \\
+\vee(C(x) \wedge C(y))
+\end{array}\right]
+\end{array}\right)
+$$
+
+# Chapter 2: Preliminaries
+
+Revisiting the example of 3 Colorability:
+
+* The FOL formula $\Phi$ is a *sentence* of the theory $T$.
+* The graph $G=C_5$ is a *finite model* that satisfies the theory $T$. ($(V, E) \models T$)
+    * This makes $T$ consistent.
+
+
+# Chapter 2: Preliminaries
+* $\sigma$-structures (model)
+* First Order Logic
+* Queries
+* Consistency: A theory $T$ is consistent if and only if it has a model.
+* Compactness Theorem: A theory $T$ is consistent if and only if every finite subset of $T$ is consistent.
+* Löwenheim-Skolem Theorem: If $T$ has an infinite model, then it has a countable model.
+* We might want to go back to chapter 1 and flesh things out.
+
+# Chapter 3: Ehrenfeucht-Fraïssé Games
+* Finite models vs infinite models (important)
+* The game itself
+
+# Chapter 3: Ehrenfeucht-Fraïssé Games (Example)
+* The two proofs (pick one)
+
+
+# Chapter 11: Finite Variable Logics
+* Pebble Games
 
 # Extra 
 
