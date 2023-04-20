@@ -184,9 +184,71 @@ Revisiting the example of 3 Colorability:
 * Löwenheim-Skolem Theorem: If $T$ has an infinite model, then it has a countable model.
 * We might want to go back to chapter 1 and flesh things out.
 
+# Chapter 3: Ehrenfeucht-Fraïssé Games (Motivation)
+
+Traditional model theoretic techniques (compactness, Lowenheim-Skolem) are not applicable to finite models.
+
+:::{.block}
+### Proposition
+Connectivity of arbitrary graphs is not FO-definable.
+:::
+
+<!--Proof: Assume FO-sentence $\phi$ defines connectivity over a vocabulary $\sigma=\{E\}$. Expand $\sigma$ with two constant symbols $c_1$ and $c_2$. -->
+
+Proof Sketch: Assume FO-sentence $\phi$ defines graph connectivity. Pick two vertices and construct a family of sentences $\psi_n$ expressing that no path between them of length $n+1$ exists for all $n$. Make a theory which contains $\phi$ and all the $\psi_n$'s. Use compactness to show that this theory is consistent. This plainly derives a contradiction.
+
+* This proof leaves open the possibility that connectivity is FO-definable over finite graphs!
+
+# Chapter 3: Ehrenfeucht-Fraïssé Games (Motivation cont.)
+
+:::{.block}
+### Proposition
+Compactness fails over finite models, i.e., there is a theory $T$ such that
+
+* $T$ has no finite models, and
+* every finite subset of $T$ has a finite model.
+:::
+Proof: Assume $\sigma=\{\emptyset\}$ and define
+$$
+\lambda_n \equiv \exists x_1\dots \exists x_n \bigwedge\limits_{i\neq j} \neg(x_i=x_j).
+$$
+Let $T=\{\lambda_n \mid n\geq 0\}$. $T$ has no finite model, but for all finite $\{\lambda_{n_1},\dots,\lambda_{n_k}\}\subset T$, any set $S$ with $|S|>\max\{n_1,\dots,n_k\}$ is a model.
+
+* Need a more tailored way to prove inexpressibility results for finite structures!
+
+
 # Chapter 3: Ehrenfeucht-Fraïssé Games
-* Finite models vs infinite models (important)
-* The game itself
+
+The Ehrenfeucht-Fraïssé game is a two-player sequential move game with the following components.
+
+Players:
+
+* Spoiler
+* Duplicator
+
+Board: two structures, e.g. $\mathcal{A}$ and $\mathcal{B}$
+
+Goal:
+
+* Spoiler wants to show that the two structures are different
+* Duplicator wants to show that the two structures are the same
+
+# Chapter 3: Ehrenfeucht-Fraïssé Games
+
+How to play:
+
+* The players play a certain number of rounds.
+* In each round, the spoiler picks a structure $\mathcal{A}$ or $\mathcal{B}$ and an element of that structure $a\in\mathcal{A}$ or $b\in \mathcal{B}$.
+* The duplicator responds by picking an element from the other structure.
+
+<!--# Chapter 3: Ehrenfeucht-Fraïssé Games-->
+
+Winning:
+
+* Let $\vec{a} = (a_1,\dots,a_n)$ and $\vec{b} = (b_1,\dots,b_n)$ be the moves played after $n$ rounds of an E-F Game. Also, let $\vec{c}^\mathcal{A}$ denote $(c_1^\mathcal{A},\dots,c_l^\mathcal{A})$ and similarly for $\vec{c}^\mathcal{B}$.
+* $(\vec{a},\vec{b})$ is a winning position for the duplicator if $((\vec{a},\vec{c}^\mathcal{A}),(\vec{b},\vec{c}^\mathcal{B}))$ is a partial isomorphism between $\mathcal{A}$ and $\mathcal{B}$.
+
+<!-- Why does winning depend on the constant symbols?-->
 
 # Chapter 3: Ehrenfeucht-Fraïssé Games (Example)
 * The two proofs (pick one)
