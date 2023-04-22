@@ -117,18 +117,61 @@ Each relation and function symbol has an associated arity.
 
 # Chapter 2: Preliminaries
 
+::: {.block}
 ### Definition
 A $\sigma$-structure $\mathfrak{U}$
 
 $$\mathfrak{U} = \langle A, \{ c^\mathfrak{U}_i \}, \{ P^\mathfrak{U}_i \}, \{ f^\mathfrak{U}_i \} \rangle$$
 
-consists of a universe $A$ together with an interpretation of
+consists of a universe $A$ **together with an interpretation** of
 
 * each constant symbol $c_i$ from $\sigma$ as an element $c^\mathfrak{U}_i \in A$
 * each $k$-ary relation symbol $P_i$ from $\sigma$ as a $k$-ary relation on $A$; that is, a set $P^\mathfrak{U}_i \subseteq A^k$
 * each $k$-ary function symbol $f_i$ from $\sigma$ as a function $f^\mathfrak{U}_i : A^k \rightarrow A$.
+:::
+
+Graph example: the edge symbols would get sent to pairs of vertices $\in A^2$.
+
+<!-- So the model and the theory share a common vocabulary?
+No. The interpretation maps this. -->
 
 
+# Chapter 2: Preliminaries
+
+Defining $t^\mathfrak{U}(\overrightarrow{a})$:
+
+* $c$ is a constant symbol
+    * $c \mapsto c^\mathfrak{U}$
+* $x_i$ is a variable
+    * $x_i \mapsto a_i$
+* $f$ is a function symbol
+    * $f(t_1, \ldots, t_k) \mapsto f^\mathfrak{U}(t_1^\mathfrak{U}(\overrightarrow{a}), \ldots, t_k^\mathfrak{U}(\overrightarrow{a}))$
+* $P$ is a relation symbol
+    * If $\phi \equiv  P(t_1, \ldots, t_k)$, then $\mathfrak{U} \models \phi(\overrightarrow{a}) \Leftrightarrow P(t_1, \ldots, t_k) \in P^\mathfrak{U}$
+
+
+# Chapter 2: Preliminaries
+
+Defining $\models$:
+
+- If $\varphi \equiv\left(t_1=t_2\right)$, then $\mathfrak{A} \models \varphi(\vec{a})$ iff $t_1^{\mathfrak{A}}(\vec{a})=t_2^{\mathfrak{A}}(\vec{a})$.
+- If $\varphi \equiv P\left(t_1, \ldots, t_k\right)$, then $\mathfrak{A} \models \varphi(\vec{a})$ iff $\left(t_1^{\mathfrak{A}}(\vec{a}), \ldots, t_k^{\mathfrak{A}}(\vec{a})\right) \in P^{\mathfrak{A}}$.
+- $\mathfrak{A} \models \neg \varphi(\vec{a})$ iff $\mathfrak{A} \models \varphi(\vec{a})$ does not hold.
+- $\mathfrak{A} \models \varphi_1(\vec{a}) \wedge \varphi_2(\vec{a})$ iff $\mathfrak{A} \models \varphi_1(\vec{a})$ and $\mathfrak{A} \models \varphi_2(\vec{a})$.
+- $\mathfrak{A} \models \varphi_1(\vec{a}) \vee \varphi_2(\vec{a})$ iff $\mathfrak{A} \models \varphi_1(\vec{a})$ or $\mathfrak{A} \models \varphi_2(\vec{a})$.
+- If $\psi(\vec{x}) \equiv \exists y \varphi(y, \vec{x})$, then $\mathfrak{A} \models \psi(\vec{a})$ iff $\mathfrak{A} \models \varphi\left(a^{\prime}, \vec{a}\right)$ for some $a^{\prime} \in A$.
+- If $\psi(\vec{x}) \equiv \forall y \varphi(y, \vec{x})$, then $\mathfrak{A} \models \psi(\vec{a})$ iff $\mathfrak{A} \models \varphi\left(a^{\prime}, \vec{a}\right)$ for all $a^{\prime} \in A$.
+
+# Chapter 2: Preliminaries
+
+### Definition
+An m-ary query, $m \geq 0$, on $\sigma$-structures, is a mapping $Q$ that associates with each structure $\mathfrak{A}$ a subset of $A^m$, such that $Q$ is closed under isomorphism: if $\mathfrak{A} \cong \mathfrak{B}$ via isomorphism $h: A \rightarrow B$, then $Q(\mathfrak{B})=h(Q(\mathfrak{A}))$
+
+We say that $Q$ is definable in a logic $\mathcal{L}$ if there is a formula $\varphi\left(x_1, \ldots, x_m\right)$ of $\mathcal{L}$ in vocabulary $\sigma$ such that for every $\mathfrak{A}$,
+$$
+Q(\mathfrak{A})=\left\{\left(a_1, \ldots, a_m\right) \in A^m \mid \mathfrak{A} \models \varphi\left(a_1, \ldots, a_m\right)\right\} .
+$$
+If $Q$ is definable by $\varphi$, we shall also write $\varphi(\mathfrak{A})$ instead of $Q(\mathfrak{A})$. Furthermore, for a formula $\varphi(\vec{x}, \vec{y})$, we write $\varphi(\mathfrak{A}, \vec{b})$ for $\left\{\vec{a} \in A^{|\vec{a}|} \mid \mathfrak{A} \models \varphi(\vec{a}, \vec{b})\right\}$.
 
 # Chapter 2: Preliminaries
 * A theory $T$ is a set of sentences $\{ \Phi_i \}_i$.
@@ -256,6 +299,14 @@ Winning:
 
 # Chapter 11: Finite Variable Logics
 * Pebble Games
+
+the spoiler and the duplicator have
+a fixed set of pairs of pebbles, and each move consists of placing a pebble on
+an element of a structure, or removing a pebble and placing it on another
+element. Second, the game does not have to end in a finite number of rounds
+(but we can still determine who wins it).
+
+Why is the game part important? (e.g. taking turns moving the pebbles / extending homomorphisms)
 
 # Extra 
 
