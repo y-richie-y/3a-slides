@@ -78,16 +78,16 @@ $A$, $B$, and $C$ are predicates.
 
 
 # Chapter 1: Introduction
-Example 2: Formal Language Theory
-
-### Theorem
-First Order Logic (FOL) is not expressive enough to express regular languages. (E.g. $(aa)^*$)
-
-# Chapter 1: Introduction
 
 ### Fagin's Theorem
 The set of all properties expressible in existential second-order logic is precisely the complexity class $NP$. That is, $NP = \exists SO$.
 <!-- oldest theorem in descriptive complexity -->
+
+# Chapter 1: Introduction
+Example 2: Formal Language Theory
+
+### Theorem
+First Order Logic (FOL) is not expressive enough to express regular languages. (E.g. $(aa)^*$)
 
 # Chapter 1: Introduction
 * What is Finite Model Theory
@@ -130,7 +130,7 @@ consists of a universe $A$ **together with an interpretation** of
 * each $k$-ary function symbol $f_i$ from $\sigma$ as a function $f^\mathfrak{U}_i : A^k \rightarrow A$.
 :::
 
-Graph example: the edge symbols would get sent to pairs of vertices $\in A^2$.
+Graph example: the edge symbols $E_i$ would get sent to pairs of vertices $\in A^2$.
 
 <!-- So the model and the theory share a common vocabulary?
 No. The interpretation maps this. -->
@@ -373,6 +373,28 @@ element. Second, the game does not have to end in a finite number of rounds
 (but we can still determine who wins it).
 
 Why is the game part important? (e.g. taking turns moving the pebbles / extending homomorphisms)
+
+# Chapter 11: Pebble Game
+
+Let $\mathfrak{A}, \mathfrak{B} \in \operatorname{STRUCT}[\sigma]$.
+A $k$-pebble game over $\mathfrak{A}$ and $\mathfrak{B}$ is played by the spoiler and the duplicator as follows. The players have a set of pairs of pebbles $\left\{\left(p_{\mathfrak{A}}^1, p_{\mathfrak{B}}^1\right), \ldots,\left(p_{\mathfrak{A}}^k, p_{\mathfrak{B}}^k\right)\right\}$. In each move, the following happens:
+
+<!-- - The spoiler chooses a structure, $\mathfrak{A}$ or $\mathfrak{B}$, and a number $1 \leq i \leq k$.
+For the description of the other moves, we assume the spoiler has chosen $\mathfrak{A}$. The other case, when the spoiler chooses $\mathfrak{B}$, is completely symmetric. -->
+- The spoiler chooses a structure, $\mathfrak{A}$ or $\mathfrak{B}$, and a number $1 \leq i \leq k$. (w.l.o.g. assume $\mathfrak{A}$ is chosen)
+- The spoiler places the pebble $p_{\mathfrak{A}}^i$ on some element of $\mathfrak{A}$. If $p_{\mathfrak{A}}^i$ was already placed on $\mathfrak{A}$, this means that the spoiler either leaves it there or removes it and places it on some other element of $\mathfrak{A}$; if $p_{\mathfrak{A}}^i$ was not used, it means that the spoiler picks that pebble and places it on an element of $\mathfrak{A}$.
+- The duplicator responds by placing $p_{\mathfrak{B}}^i$ on some element of $\mathfrak{B}$.
+
+# Chapter 11: Pebble Game
+
+We denote the game that continues for $n$ rounds by $\mathrm{PG}_k^n(\mathfrak{A}, \mathfrak{B})$, and the game that continues forever by $\mathrm{PG}_k^{\infty}(\mathfrak{A}, \mathfrak{B})$.
+
+After each round of the game, the pebbles placed on $\mathfrak{A}$ and $\mathfrak{B}$ define a relation $F \subseteq A \times B$ : if $p_{\mathfrak{A}}^i$, for some $i \leq k$, is placed on $a \in A$ and $p_{\mathfrak{B}}^i$ is placed on $b \in B$, then the pair $(a, b)$ is in $F$.
+
+The duplicator has a winning strategy in $\mathrm{PG}_k^n(\mathfrak{A}, \mathfrak{B})$ if he can ensure that after each round $j \leq n$, the relation $F$ defines a partial isomorphism. That is, $F$ is a graph of a partial isomorphism. In this case we write $\mathfrak{A} \equiv_{k, n}^{\infty \omega} \mathfrak{B}$.
+The duplicator has a winning strategy in $\mathrm{PG}_k^{\infty}(\mathfrak{A}, \mathfrak{B})$ if he can ensure that after every round the relation $F$ defines a partial isomorphism. This is denoted by $\mathfrak{A} \equiv_k^{\infty} \mathfrak{B}$.
+
+# Connection to Graph Isomorphism
 
 # Extra 
 
