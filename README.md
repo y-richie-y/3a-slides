@@ -325,6 +325,43 @@ Let $k>0$, and let $L_1, L_2$ be linear orders of length at least $2^k$. Then $L
 
 # Chapter 3: Equivalence of E-F Games and FOL
 
+:::{.block}
+### Definition (Quantifier rank). 
+The quantifier rank of a formula qr($\varphi$) is its depth of quantifier nesting. We define this inductively as follows.
+
+* If $\varphi$ is atomic, then $\text{qr}(\varphi) = 0$.
+* $\text{qr}(\varphi_1\lor \varphi_2) = \text{qr}(\varphi_1 \land \varphi_2) = \max(\text{qr}(\varphi_1),\text{qr}(\varphi_2))$.
+* $\text{qr}(\neg \varphi) = \text{qr}(\varphi)$.
+* $\text{qr}(\exists x \varphi) = \text{qr}(\forall x \varphi) = \text{qr}(\varphi)+1$.
+:::
+
+* FO[$k$] denotes the set of all FO formulae up to quantifier rank $k$.
+
+* Two $\sigma$-structures $\mathcal{A}$ and $\mathcal{B}$ agree on a set of FO sentences $S$ if for all $\phi\in S$, $\mathcal{A}\vDash \phi \iff \mathcal{B}\vDash \phi$.
+
+# Chapter 3: Equivalence of E-F Games and FOL
+
+The following Theorem and Corollary allow us to prove inexpressibility results of FO on finite structures using E-F games.
+
+:::{.block}
+### Theorem (Ehrenfeucht-Fraïssé).
+Let $\mathcal{A}$ and $\mathcal{B}$ be two structures in a relational vocabulary. Then the following are equivalent.
+
+* $\mathcal{A}$ and $\mathcal{B}$ agree on FO[$k$].
+* $\mathcal{A}\equiv_k \mathcal{B}$.
+:::
+
+:::{.block}
+### Corollary.
+A property $\mathcal{P}$ of finite $\sigma$-structures in not expressible in FO if for every $k\in\mathbb{N}$, there exist two finite $\sigma$-structures, $\mathcal{A}_k$ and $\mathcal{B}_k$, such that
+
+* $\mathcal{A}_k\equiv_k \mathcal{B}_k$, and
+* $\mathcal{A}_k$ has property $\mathcal{P}$ yet $\mathcal{B}_k$ does not.
+:::
+
+
+
+
 
 # Chapter 11: Finite Variable Logics
 * Pebble Games
