@@ -290,11 +290,25 @@ Winning:
 
 * Let $\vec{a} = (a_1,\dots,a_n)$ and $\vec{b} = (b_1,\dots,b_n)$ be the moves played after $n$ rounds of an E-F Game. Also, let $\vec{c}^\mathcal{A}$ denote $(c_1^\mathcal{A},\dots,c_l^\mathcal{A})$ and similarly for $\vec{c}^\mathcal{B}$.
 * $(\vec{a},\vec{b})$ is a winning position for the duplicator if $((\vec{a},\vec{c}^\mathcal{A}),(\vec{b},\vec{c}^\mathcal{B}))$ is a partial isomorphism between $\mathcal{A}$ and $\mathcal{B}$.
+* When the duplicator has an $n$-round winning strategy, write $\mathcal{A}\equiv_n\mathcal{B}$.
 
 <!-- Why does winning depend on the constant symbols?-->
 
-# Chapter 3: Ehrenfeucht-Fraïssé Games (Example)
-* The two proofs (pick one)
+# Chapter 3: Ehrenfeucht-Fraïssé Games (Examples)
+
+* When $\sigma$ is empty, a $\sigma$-structure is just a set. When $|A|,|B|\geq n$, $A\equiv_n B$.
+* After $i$ rounds, the game state is $(a_1,\dots,a_i),(b_1,\dots,b_i)$. If the spoiler picks $a_{i+1}\in A$ s.t. $a_{i+1} = a_j$ for some $j \leq i$, the duplicator plays $b_j$. Otherwise, the duplicator plays any element in $B-\{b_1,\dots,b_i\}$ which is guaranteed to exist because $|B|\geq n$.
+
+# Chapter 3: Ehrenfeucht-Fraïssé Games (Examples)
+
+* When $\sigma$ contains a single relation symbol $<$, we can interpret this relation as a linear order to get structures of the form $L=\langle \{a_1,\dots,a_m\},<\rangle$. We want to know when $L_1\equiv_n L_2$ for $m\geq n$.
+* Easy to see that this doesn't hold in general.
+
+### Theorem.
+
+Let $k>0$, and let $L_1, L_2$ be linear orders of length at least $2^k$. Then $L_1\equiv_k L_2$.
+
+# Chapter 3: Equivalence of E-F Games and FOL
 
 
 # Chapter 11: Finite Variable Logics
