@@ -276,6 +276,16 @@ Goal:
 * Spoiler wants to show that the two structures are different
 * Duplicator wants to show that the two structures are the same
 
+# Chapter 3
+
+### Definition (Partial Isomorphism).
+
+Let $\mathcal{A}$, $\mathcal{B}$ be two $\sigma$-structures, where $\sigma$ is relational, and $\vec{a}=(a_1,\dots,a_n)$ and $\vec{b}=(b_1,\dots,b_n)$ two tuples in $\mathcal{A}$ and $\mathcal{B}$ respectively. Then $(\vec{a},\vec{b})$ is a partial isomorphism between $\mathcal{A}$ and $\mathcal{B}$ when the following conditions hold.
+
+* For every $i,j\leq n$, $a_i=a_j\iff b_i=b_j$.
+* For every constant symbol $c$ from $\sigma$ and every $i\leq n$, $a_i=c^\mathcal{A} \iff b_i=c^\mathcal{B}$.
+* For every $k$-ary relation symbol $P$ from $\sigma$ and every sequence $(i_1,\dots,i_k)$ of not necessarily distinct numbers from $[1,n]$, $(a_{i_1},\dots,a_{i_k})\in P^\mathcal{A} \iff (b_{i_1},\dots,b_{i_k})\in P^\mathcal{B}$.
+
 # Chapter 3: Ehrenfeucht-Fraïssé Games
 
 How to play:
@@ -304,9 +314,14 @@ Winning:
 * When $\sigma$ contains a single relation symbol $<$, we can interpret this relation as a linear order to get structures of the form $L=\langle \{a_1,\dots,a_m\},<\rangle$. We want to know when $L_1\equiv_n L_2$ for $m\geq n$.
 * Easy to see that this doesn't hold in general.
 
+:::{.block}
 ### Theorem.
 
 Let $k>0$, and let $L_1, L_2$ be linear orders of length at least $2^k$. Then $L_1\equiv_k L_2$.
+:::
+
+* Proof technique 1: prove by induction with a stronger IH than just partial isomorphism.
+* Proof technique 2: Use the \emph{composition method}, i.e., prove results for simpler games before composing to achieve desired result.
 
 # Chapter 3: Equivalence of E-F Games and FOL
 
