@@ -267,7 +267,9 @@ Goal: prove inexpressibility results for finite structures.
 
 * In particular: partition FO sentences into classes FO[1], FO[2],..., FO[$k$],... and for each $k$, find structures $\mathfrak{A}_k$ and $\mathfrak{B}_k$ sutch that $\mathfrak{A}\vDash \phi \iff \mathfrak{B}\vDash \phi$ for all FO[$k$] sentences $\phi$, but $\mathfrak{A}$ has property $\mathcal{P}$ while $\mathfrak{B}$ does not.
 
-How can we define FO[$k$] and prove when structures agree on it?
+Big question 1: how can we define FO[$k$]?
+
+Big question 2: how can we prove when structures agree on FO[$k$]?
 
 
 # Chapter 3: Ehrenfeucht-Fraïssé Games
@@ -369,6 +371,8 @@ The quantifier rank of a formula qr($\varphi$) is its depth of quantifier nestin
 
 * Two $\sigma$-structures $\mathfrak{A}$ and $\mathfrak{B}$ agree on a set of FO sentences $S$ if for all $\phi\in S$, $\mathfrak{A}\vDash \phi \iff \mathfrak{B}\vDash \phi$.
 
+This answers Big Question 1!
+
 # Chapter 3: Equivalence of E-F Games and FOL
 
 The following Theorem and Corollary allow us to prove inexpressibility results of FO on finite structures using E-F games.
@@ -389,7 +393,30 @@ A property $\mathcal{P}$ of finite $\sigma$-structures in not expressible in FO 
 * $\mathfrak{A}_k$ has property $\mathcal{P}$ yet $\mathfrak{B}_k$ does not.
 :::
 
+This answers Big Question 2!
 
+# Chapter 3: Applications of E-F Games
+
+Let's put these results to use!
+
+:::{.block}
+### Corollary.
+Even is not FO-expressible over linear orders.
+:::
+
+Proof: Let $\mathfrak{A}_k$ be a linear order of length $2^k$ and $\mathfrak{B}_k$ be a linear order of length $2^k + 1$. We already proved that $\mathfrak{A}_k\equiv_k\mathfrak{B}_k$. Since the length of $\mathfrak{A}_k$ is even and the length of $\mathfrak{B}_k$ is odd, even is not FO-expressible.
+
+# Chapter 3: Applications of E-F Games
+
+Graph connectivity is not FO-expressible over finite graphs.
+
+Define an edge relation from a linear order:
+
+* If $y = succ(succ(x))$, then $E(x,y)$.
+* If $z$ is last element and $z = succ(x)$ and $y$ is the first element, then $E(x,y)$.
+* If $x$ is the last element and $y$ is the successor of the first element, then $E(x,y)$.
+
+Even length linear orders will have 2 connected components while odd length linear orders will have 1.
 
 
 # Chapter 11: Finite Variable Logics
