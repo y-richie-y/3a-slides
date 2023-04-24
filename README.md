@@ -269,7 +269,7 @@ Players:
 * Spoiler
 * Duplicator
 
-Board: two structures, e.g. $\mathcal{A}$ and $\mathcal{B}$
+Board: two structures, e.g. $\mathfrak{A}$ and $\mathfrak{B}$
 
 Goal:
 
@@ -280,27 +280,27 @@ Goal:
 
 ### Definition (Partial Isomorphism).
 
-Let $\mathcal{A}$, $\mathcal{B}$ be two $\sigma$-structures, where $\sigma$ is relational, and $\vec{a}=(a_1,\dots,a_n)$ and $\vec{b}=(b_1,\dots,b_n)$ two tuples in $\mathcal{A}$ and $\mathcal{B}$ respectively. Then $(\vec{a},\vec{b})$ is a partial isomorphism between $\mathcal{A}$ and $\mathcal{B}$ when the following conditions hold.
+Let $\mathfrak{A}$, $\mathfrak{B}$ be two $\sigma$-structures, where $\sigma$ is relational, and $\vec{a}=(a_1,\dots,a_n)$ and $\vec{b}=(b_1,\dots,b_n)$ two tuples in $\mathfrak{A}$ and $\mathfrak{B}$ respectively. Then $(\vec{a},\vec{b})$ is a partial isomorphism between $\mathfrak{A}$ and $\mathfrak{B}$ when the following conditions hold.
 
 * For every $i,j\leq n$, $a_i=a_j\iff b_i=b_j$.
-* For every constant symbol $c$ from $\sigma$ and every $i\leq n$, $a_i=c^\mathcal{A} \iff b_i=c^\mathcal{B}$.
-* For every $k$-ary relation symbol $P$ from $\sigma$ and every sequence $(i_1,\dots,i_k)$ of not necessarily distinct numbers from $[1,n]$, $(a_{i_1},\dots,a_{i_k})\in P^\mathcal{A} \iff (b_{i_1},\dots,b_{i_k})\in P^\mathcal{B}$.
+* For every constant symbol $c$ from $\sigma$ and every $i\leq n$, $a_i=c^\mathfrak{A} \iff b_i=c^\mathfrak{B}$.
+* For every $k$-ary relation symbol $P$ from $\sigma$ and every sequence $(i_1,\dots,i_k)$ of not necessarily distinct numbers from $[1,n]$, $(a_{i_1},\dots,a_{i_k})\in P^\mathfrak{A} \iff (b_{i_1},\dots,b_{i_k})\in P^\mathfrak{B}$.
 
 # Chapter 3: Ehrenfeucht-Fraïssé Games
 
 How to play:
 
 * The players play a certain number of rounds.
-* In each round, the spoiler picks a structure $\mathcal{A}$ or $\mathcal{B}$ and an element of that structure $a\in\mathcal{A}$ or $b\in \mathcal{B}$.
+* In each round, the spoiler picks a structure $\mathfrak{A}$ or $\mathfrak{B}$ and an element of that structure $a\in\mathfrak{A}$ or $b\in \mathfrak{B}$.
 * The duplicator responds by picking an element from the other structure.
 
 <!--# Chapter 3: Ehrenfeucht-Fraïssé Games-->
 
 Winning:
 
-* Let $\vec{a} = (a_1,\dots,a_n)$ and $\vec{b} = (b_1,\dots,b_n)$ be the moves played after $n$ rounds of an E-F Game. Also, let $\vec{c}^\mathcal{A}$ denote $(c_1^\mathcal{A},\dots,c_l^\mathcal{A})$ and similarly for $\vec{c}^\mathcal{B}$.
-* $(\vec{a},\vec{b})$ is a winning position for the duplicator if $((\vec{a},\vec{c}^\mathcal{A}),(\vec{b},\vec{c}^\mathcal{B}))$ is a partial isomorphism between $\mathcal{A}$ and $\mathcal{B}$.
-* When the duplicator has an $n$-round winning strategy, write $\mathcal{A}\equiv_n\mathcal{B}$.
+* Let $\vec{a} = (a_1,\dots,a_n)$ and $\vec{b} = (b_1,\dots,b_n)$ be the moves played after $n$ rounds of an E-F Game. Also, let $\vec{c}^\mathfrak{A}$ denote $(c_1^\mathfrak{A},\dots,c_l^\mathfrak{A})$ and similarly for $\vec{c}^\mathfrak{B}$.
+* $(\vec{a},\vec{b})$ is a winning position for the duplicator if $((\vec{a},\vec{c}^\mathfrak{A}),(\vec{b},\vec{c}^\mathfrak{B}))$ is a partial isomorphism between $\mathfrak{A}$ and $\mathfrak{B}$.
+* When the duplicator has an $n$-round winning strategy, write $\mathfrak{A}\equiv_n\mathfrak{B}$.
 
 <!-- Why does winning depend on the constant symbols?-->
 
@@ -337,7 +337,7 @@ The quantifier rank of a formula qr($\varphi$) is its depth of quantifier nestin
 
 * FO[$k$] denotes the set of all FO formulae up to quantifier rank $k$.
 
-* Two $\sigma$-structures $\mathcal{A}$ and $\mathcal{B}$ agree on a set of FO sentences $S$ if for all $\phi\in S$, $\mathcal{A}\vDash \phi \iff \mathcal{B}\vDash \phi$.
+* Two $\sigma$-structures $\mathfrak{A}$ and $\mathfrak{B}$ agree on a set of FO sentences $S$ if for all $\phi\in S$, $\mathfrak{A}\vDash \phi \iff \mathfrak{B}\vDash \phi$.
 
 # Chapter 3: Equivalence of E-F Games and FOL
 
@@ -345,18 +345,18 @@ The following Theorem and Corollary allow us to prove inexpressibility results o
 
 :::{.block}
 ### Theorem (Ehrenfeucht-Fraïssé).
-Let $\mathcal{A}$ and $\mathcal{B}$ be two structures in a relational vocabulary. Then the following are equivalent.
+Let $\mathfrak{A}$ and $\mathfrak{B}$ be two structures in a relational vocabulary. Then the following are equivalent.
 
-* $\mathcal{A}$ and $\mathcal{B}$ agree on FO[$k$].
-* $\mathcal{A}\equiv_k \mathcal{B}$.
+* $\mathfrak{A}$ and $\mathfrak{B}$ agree on FO[$k$].
+* $\mathfrak{A}\equiv_k \mathfrak{B}$.
 :::
 
 :::{.block}
 ### Corollary.
-A property $\mathcal{P}$ of finite $\sigma$-structures in not expressible in FO if for every $k\in\mathbb{N}$, there exist two finite $\sigma$-structures, $\mathcal{A}_k$ and $\mathcal{B}_k$, such that
+A property $\mathcal{P}$ of finite $\sigma$-structures in not expressible in FO if for every $k\in\mathbb{N}$, there exist two finite $\sigma$-structures, $\mathfrak{A}_k$ and $\mathfrak{B}_k$, such that
 
-* $\mathcal{A}_k\equiv_k \mathcal{B}_k$, and
-* $\mathcal{A}_k$ has property $\mathcal{P}$ yet $\mathcal{B}_k$ does not.
+* $\mathfrak{A}_k\equiv_k \mathfrak{B}_k$, and
+* $\mathfrak{A}_k$ has property $\mathcal{P}$ yet $\mathfrak{B}_k$ does not.
 :::
 
 
