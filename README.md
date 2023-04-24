@@ -418,6 +418,17 @@ Define an edge relation from a linear order:
 
 Even length linear orders will have 2 connected components while odd length linear orders will have 1.
 
+# Chapter 3: Applications of E-F Games
+
+Other properties of finite graphs that can be shown to be FO-inexpressible using E-F games include:
+
+* "Treeness",
+* Acyclicity,
+* Planarity,
+* Hamiltonicity,
+* $k$-colorability for $k\geq 2$,
+* Existence of a clique of size at least $n/2$ for an $n$-node graph.
+
 
 # Chapter 11: Finite Variable Logics
 * Pebble Games
