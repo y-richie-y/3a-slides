@@ -9,18 +9,32 @@ date:
 - Apr 24, 2023
 
 ---
-
+# Chapter 1: What is Finite Model Theory?
+<!-- 
 # Chapter 1: Introduction
+* What is Finite Model Theory
+* Example 1: $NP = \exists SO$
+    * Graph example 1: Reachability
+    * Graph example 2: Hamiltonian Cycle
+    * Graph example 3: 3 Colorability
+* Example 2: Formal Language Theory
+    * Example 4: Regular Languages are not $FO$ expressible -->
 * Finite model theory studies the expressive power of logics on finite models.
     * Finite graphs
     * Finite strings ...
-* Classical model theory, on the other hand, concentrates on infinite structures
+* Classical model theory, on the other hand, concentrates on infinite structures.
     * $\langle\mathbf{C}, +, \cdot\rangle$
     * $\langle\mathbf{R}, +, \cdot, <\rangle$
     * Infinite graphs ...
 
-# Chapter 1: Introduction
-Example 1: $NP$ vs $\exists SO$
+# Chapter 1: Example 1 ($NP$ vs $\exists SO$)
+<!--
+The class of problems in NP
+The set of formulas in existential second-order logic
+
+in ESO the existential quantifiers can be over
+1st order relations and functions
+-->
 
 <!-- Can't express reachability in FOL -->
 
@@ -30,8 +44,7 @@ Given a graph $G = (V, E)$, is there a cycle that visits every vertex exactly on
 ### 3 Colorability
 Given a graph $G = (V, E)$, can we color the vertices with three colors such that no two adjacent vertices have the same color?
 
-# Chapter 1: Introduction
-Example 1: $NP$ vs $\exists SO$
+# Chapter 1: Example 1 ($NP$ vs $\exists SO$)
 
 ::: {.block}
 ### Hamiltonian Cycle
@@ -50,8 +63,7 @@ $$
 
 $L$ and $S$ are binary relations.
 
-# Chapter 1: Introduction
-Example 1: $NP$ vs $\exists SO$
+# Chapter 1: Example 1 ($NP$ vs $\exists SO$)
 
 ::: {.block}
 ### 3 Colorability
@@ -77,33 +89,23 @@ $$
 $A$, $B$, and $C$ are predicates.
 
 
-# Chapter 1: Introduction
+# Chapter 1: Example 1 ($NP$ vs $\exists SO$)
 
 ### Fagin's Theorem
 The set of all properties expressible in existential second-order logic is precisely the complexity class $NP$. That is, $NP = \exists SO$.
 <!-- oldest theorem in descriptive complexity -->
 
-# Chapter 1: Introduction
-Example 2: Formal Language Theory
+# Chapter 1: Example 2 (Formal Language Theory)
 
 ### Theorem
 First Order Logic (FOL) is not expressive enough to express regular languages. (E.g. $(aa)^*$)
-
-# Chapter 1: Introduction
-* What is Finite Model Theory
-* Example 1: $NP = \exists SO$
-    * Graph example 1: Reachability
-    * Graph example 2: Hamiltonian Cycle
-    * Graph example 3: 3 Colorability
-* Example 2: Formal Language Theory
-    * Example 4: Regular Languages are not $FO$ expressible
 
 # Chapter 2: Preliminaries
 
 ::: {.block}
 ### Definition
 A vocabulary $\sigma$ is a collection of constant symbols $(
-c_1, \ldots)$, relation (or predicate), symbols $(P_1, \ldots)$ and function
+c_1, \ldots)$, relation (or predicate) symbols $(P_1, \ldots)$ and function
 symbols $(f_1, \ldots)$.
 :::
 
@@ -130,7 +132,7 @@ consists of a universe $A$ **together with an interpretation** of
 * each $k$-ary function symbol $f_i$ from $\sigma$ as a function $f^\mathfrak{U}_i : A^k \rightarrow A$.
 :::
 
-Graph example: the edge symbols $E_i$ would get sent to pairs of vertices $\in A^2$.
+Graph example: edge symbols $E_i$ are sent to pairs of vertices $\in A^2$.
 
 <!-- So the model and the theory share a common vocabulary?
 No. The interpretation maps this. -->
@@ -216,16 +218,6 @@ Revisiting the example of 3 Colorability:
 * The FOL formula $\Phi$ is a *sentence* of the theory $T$.
 * The graph $G=C_5$ is a *finite model* that satisfies the theory $T$. ($(V, E) \models T$)
     * This makes $T$ consistent.
-
-
-# Chapter 2: Preliminaries
-* $\sigma$-structures (model)
-* First Order Logic
-* Queries
-* Consistency: A theory $T$ is consistent if and only if it has a model.
-* Compactness Theorem: A theory $T$ is consistent if and only if every finite subset of $T$ is consistent.
-* Löwenheim-Skolem Theorem: If $T$ has an infinite model, then it has a countable model.
-<!--* We might want to go back to chapter 1 and flesh things out.-->
 
 # Chapter 3: Ehrenfeucht-Fraïssé Games (Motivation)
 
@@ -431,15 +423,13 @@ Other properties of finite graphs that can be shown to be FO-inexpressible using
 
 
 # Chapter 11: Finite Variable Logics
-* Pebble Games
+## Pebble Games
 
 the spoiler and the duplicator have
 a fixed set of pairs of pebbles, and each move consists of placing a pebble on
 an element of a structure, or removing a pebble and placing it on another
 element. Second, the game does not have to end in a finite number of rounds
-(but we can still determine who wins it).
-
-Why is the game part important? (e.g. taking turns moving the pebbles / extending homomorphisms)
+(but we can still determine who wins it)
 
 # Chapter 11: Pebble Game
 
@@ -463,10 +453,20 @@ The duplicator has a winning strategy in $\mathrm{PG}_k^{\infty}(\mathfrak{A}, \
 
 # Connection to Graph Isomorphism
 
-# Extra 
+The $k$-dimensional Weisfeiler-Leman algorithm is a powerful tool for studying the graph isomorphism problem. It is also used to describe the expressive power of graph neural networks.
 
-The well known Pythagorean theorem $x^2 + y^2 = z^2$ was  proved to be invalid for other exponents. 
-Meaning the next equation has no integer solutions:
-$$x^n + y^n = z^n$$
+# Connection to Graph Isomorphism
 
-Can AI, help find near misses for this equation?
+The $k$ Weisfeiler-Leman test takes all subsets of vertices
+of size $k$ out of $n$ and assigns them a colour determined by the subgraph formed by the $k$ vertices. $k$-subgraphs that are isomorphic to each other are assigned the same colour
+and grouped into a cell. Each of the
+$\begin{pmatrix}n \\ k\end{pmatrix}$
+subgraphs of size $k$ belong to exactly one of
+$2^{\begin{pmatrix}k \\ 2\end{pmatrix}}$
+classes of k-subgraphs.
+
+# Connection to Graph Isomorphism
+
+The $k$-dimensional Weisfeiler-Leman algorithm distinguishes two graphs if and only if the player Spoiler has a winning strategy in the __bijective__ pebble game played with $k + 1$ pairs of pebbles on the two graphs.
+
+Bijective pebble game: the Duplicator has to provide a bijection between the elements of the two structures after the Spoiler chooses a pebble, but before the Spoiler places the pebble.
