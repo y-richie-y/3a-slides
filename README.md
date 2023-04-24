@@ -225,7 +225,7 @@ Revisiting the example of 3 Colorability:
 * Consistency: A theory $T$ is consistent if and only if it has a model.
 * Compactness Theorem: A theory $T$ is consistent if and only if every finite subset of $T$ is consistent.
 * Löwenheim-Skolem Theorem: If $T$ has an infinite model, then it has a countable model.
-* We might want to go back to chapter 1 and flesh things out.
+<!--* We might want to go back to chapter 1 and flesh things out.-->
 
 # Chapter 3: Ehrenfeucht-Fraïssé Games (Motivation)
 
@@ -265,7 +265,7 @@ Goal: prove inexpressibility results for finite structures.
 
 * General strategy: Suppose the desired property is expressible by a sentence FOL. Find two structures that agree on all FO sentences where one satisfies the property but the other does not.
 
-* In particular: partition FO sentences into classes FO[1], FO[2],..., FO[$k$],... and for each $k$, find structures $\mathfrak{A}_k$ and $\mathfrak{B}_k$ sutch that $\mathfrak{A}\vDash \phi \iff \mathfrak{B}\vDash \phi$ for all FO[$k$] sentences $\phi$, but $\mathfrak{A}$ has property $\mathcal{P}$ while $\mathfrak{B}$ does not.
+* In particular: partition FO sentences into classes FO[1], FO[2],..., FO[$k$],... and for each $k$, find structures $\mathfrak{A}_k$ and $\mathfrak{B}_k$ sutch that $\mathfrak{A}_k\vDash \phi \iff \mathfrak{B}_k\vDash \phi$ for all FO[$k$] sentences $\phi$, but $\mathfrak{A}_k$ has property $\mathcal{P}$ while $\mathfrak{B}_k$ does not.
 
 Big question 1: how can we define FO[$k$]?
 
