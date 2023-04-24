@@ -259,6 +259,16 @@ Let $T=\{\lambda_n \mid n\geq 0\}$. $T$ has no finite model, but for all finite 
 
 * Need a more tailored way to prove inexpressibility results for finite structures!
 
+# Chapter 3: Ehrenfeucht-Fraïssé Games
+
+Goal: prove inexpressibility results for finite structures.
+
+* General strategy: Suppose the desired property is expressible by a sentence FOL. Find two structures that agree on all FO sentences where one satisfies the property but the other does not.
+
+* In particular: partition FO sentences into classes FO[1], FO[2],..., FO[$k$],... and for each $k$, find structures $\mathfrak{A}_k$ and $\mathfrak{B}_k$ sutch that $\mathfrak{A}\vDash \phi \iff \mathfrak{B}\vDash \phi$ for all FO[$k$] sentences $\phi$, but $\mathfrak{A}$ has property $\mathcal{P}$ while $\mathfrak{B}$ does not.
+
+How can we define FO[$k$] and prove when structures agree on it?
+
 
 # Chapter 3: Ehrenfeucht-Fraïssé Games
 
@@ -323,6 +333,26 @@ Let $k>0$, and let $L_1, L_2$ be linear orders of length at least $2^k$. Then $L
 * Proof technique 1: prove by induction with a stronger IH than just partial isomorphism.
 * Proof technique 2: Use the \emph{composition method}, i.e., prove results for simpler games before composing to achieve desired result.
 
+# Chapter 3: Composition Method Proof
+
+:::{.block}
+### Lemma.
+Let $L_1, L_2, a\in L_1, b\in L_2$ satisfy $L_1^{\leq a}\equiv_k L_2^{\leq b}$ and $L_1^{\geq a}\equiv_k L_2^{\geq b}$. Then $(L_1,a)\equiv_k (L_2,b)$.
+:::
+
+Proof: The duplicator just uses the winning strategy for whichever substructure the spoiler plays in. The duplicator responds to $b$ with $a$ and $a$ with $b$. This implies they can win the $k$ round game on $(L_1,a)$ and $(L_2,b)$.
+
+# Chapter 3: Composition Method Proof (Cont.)
+
+Use induction on $k$. Base case is trivial. For the inductive step, assume $L_1, L_2$ have length at least $2^k$ and that the spoiler plays some $a\in L_1$ (symmetric for $L_2$). We need to find $b\in L_2$ s.t. $(L_1,a)\equiv_{k-1} (L_2,b)$. 
+
+* If length of $L_1^{\leq a} \leq 2^{k-1}$, we let $b\in L_2$ such that $L_1^{\leq a}\cong L_2^{\leq b}$ (i.e. $d(\min(L_1),a) = d(\min(L_2),b)$). We also know that the length of $L_1^{\geq a}$ and $L_2^{\geq b}$ is at least $2^{k-1}$, so by the IH, $L_1^{\geq a}\equiv_{k-1} L_2^{\geq b}$. Thus $(L_1, a)\equiv_{k-1} (L_2, b)$ by preceding lemma.
+* If length of $L_1^{\geq a} \leq 2^{k-1}$, use the same strategy as above.
+* Otherwise, the length of $L_1^{\leq a}$ and $L_1^{\geq a}$ are both at least $2^{k-1}$. In this case, choose $b\in L_2$ such that the lengths of $L_2^{\leq b}$ and $L_2^{\geq b}$ are at least $2^{k-1}$ (possible because length $L_2\geq 2^k$). So by the IH, $L_1^{\geq a}\equiv_{k-1} L_2^{\geq b}$ and $L_1^{\leq a}\equiv_{k-1} L_2^{\leq b}$ so $(L_1, a)\equiv_{k-1} (L_2, b)$.
+
+So since $(L_1, a)\equiv_{k-1} (L_2, b)$ for any $a\in L_1$, we have $L_1\equiv_k L_2$ as desired.
+
+
 # Chapter 3: Equivalence of E-F Games and FOL
 
 :::{.block}
@@ -358,7 +388,6 @@ A property $\mathcal{P}$ of finite $\sigma$-structures in not expressible in FO 
 * $\mathfrak{A}_k\equiv_k \mathfrak{B}_k$, and
 * $\mathfrak{A}_k$ has property $\mathcal{P}$ yet $\mathfrak{B}_k$ does not.
 :::
-
 
 
 
